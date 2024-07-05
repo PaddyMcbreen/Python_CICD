@@ -1,6 +1,11 @@
 import sqlite3
 import random
+import subprocess
 from database import init_db, save_score
+
+# Give scripts required permissions:
+subprocess.run(["chmod +x ./scripts/permissions.sh"], shell=True)
+subprocess.run(["./scripts/permissions.sh"], shell=True)
 
 DATABASE = 'scores.db'
 
@@ -26,6 +31,13 @@ def play_game():
         else:
             print(f"Congratulations! You've guessed the number in {attempts} attempts.")
             save_score(attempts)
+            
+            again = str(input("Would you like to play again?: (y/n) ")).strip().lower()
+            if again == "y":
+                print("Great! Here we go again")
+                subprocess.run(["./scripts/again_app.sh"], shell=True)
+            else:
+                print("Thats too bad! Bye now")
             break
 
 if __name__ == '__main__':
