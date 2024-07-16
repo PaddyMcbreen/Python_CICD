@@ -1,7 +1,7 @@
 import sqlite3
 import random
 import subprocess
-from database import init_db, save_score
+from src.database import init_db, save_score
 
 # Give scripts required permissions:
 subprocess.run(["chmod +x ./scripts/permissions.sh"], shell=True)
