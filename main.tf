@@ -58,10 +58,6 @@ resource "aws_codepipeline" "codepipeline" {
   }
 }
 
-resource "aws_s3_bucket" "codepipeline_bucket" {
-  bucket = "codepipeline-bucket"
-}
-
 resource "aws_s3_bucket_public_access_block" "codepipeline_bucket_pab" {
   bucket = aws_s3_bucket.codepipeline_bucket.id
 
