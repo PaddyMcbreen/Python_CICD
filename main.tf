@@ -59,7 +59,7 @@ resource "aws_codepipeline" "codepipeline" {
 }
 
 resource "aws_s3_bucket" "codepipeline_bucket" {
-  bucket = "test-bucket"
+  bucket = "codepipeline-bucket"
 }
 
 resource "aws_s3_bucket_public_access_block" "codepipeline_bucket_pab" {
