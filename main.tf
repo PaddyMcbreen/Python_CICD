@@ -11,8 +11,8 @@ resource "aws_codestarconnections_connection" "codestar_connection" {
 # AWS CodePipeline - S3 Buckets
 #============================================================================#
 
-resource "aws_s3_bucket" "codepipeline_storage" {
-  bucket = "codepipeline-storage-bucket"
+resource "aws_s3_bucket" "codepipeline_storage_bucket" {
+  bucket = "codepipeline-bucket"
 }
 
 #============================================================================#
@@ -24,7 +24,7 @@ resource "aws_codepipeline" "codepipeline" {
   role_arn = aws_iam_role.codepipeline_role.arn
 
   artifact_store {
-    location = aws_s3_bucket.codepipeline_storage.bucket
+    location = aws_s3_bucket.codepipeline_storage_bucket.bucket
     type     = "S3"
   }
 
@@ -67,7 +67,7 @@ resource "aws_codepipeline" "codepipeline" {
 }
 
 resource "aws_s3_bucket_public_access_block" "codepipeline_bucket_pab" {
-  bucket = aws_s3_bucket.codepipeline_storage.id
+  bucket = aws_s3_bucket.codepipeline_storage_bucket.id
 
   block_public_acls       = true
   block_public_policy     = true
@@ -106,8 +106,8 @@ data "aws_iam_policy_document" "codepipeline_policy" {
     ]
 
     resources = [
-      aws_s3_bucket.codepipeline_storage.arn,
-      "${aws_s3_bucket.codepipeline_storage.arn}/*"
+      aws_s3_bucket.codepipeline_storage_bucket.arn,
+      "${aws_s3_bucket.codepipeline_storage_bucket.arn}/*"
     ]
   }
 
