@@ -4,15 +4,20 @@ phases:
   install:
     runtime-versions:
       python: latest
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
+      - echo Running unit tests ...
+      - pytest
   post_build:
     commands:
       - echo Build completed on `date`
-# artifacts:
-#   files:
-#     - artifacts/imagedefinitions.json
+artifacts:
+  files:
+    - '**/*'
