@@ -46,10 +46,10 @@ def play_game():
                 subprocess.run(["./scripts/again_app.sh"], shell=True)
             else:
                 print("Thats too bad! Bye now")
-                print("Here are your scores: ")
+                print("Here is your score: ")
                 scores = get_scores()
                 for score in scores:
-                    print(f"Attempt ID: {score[0]}, Attempts: {score[1]}")
+                    print(f"Player ID: {score[0]}, Attempts: {score[1]}")
             break
 
 if __name__ == '__main__':
