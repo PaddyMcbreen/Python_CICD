@@ -86,8 +86,7 @@ resource "aws_codebuild_project" "codebuild_project" {
 
   source {
     type            = "GITHUB"
-    location        = "https://github.com/mitchellh/packer.git"
-    git_clone_depth = 1
+    location        = "https://github.com/PaddyMcbreen/Python_CICD"
   }
 
   tags = {
