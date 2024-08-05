@@ -10,7 +10,7 @@ class pythonTests(unittest.TestCase):
         # Arrange & Act
         attempts = play_game()
         # Assert
-        self.assertEqual(attempts, 0, "The variable 'attempts' should start at 0.")
+        self.assertEqual(attempts, 0)
 
 
 
