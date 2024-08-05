@@ -12,7 +12,7 @@ resource "aws_codestarconnections_connection" "codestar_connection" {
 #============================================================================#
 
 resource "aws_s3_bucket" "pipeline_arti_bucket" {
-  bucket = "pipeline-artifact-bucket"
+  bucket = "pipeline-arti-bucket"
 }
 
 #============================================================================#
