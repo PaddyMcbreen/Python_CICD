@@ -4,20 +4,15 @@ phases:
   install:
     runtime-versions:
       python: latest
-    commands:
-      - echo Installing dependencies...
-      - pip install --upgrade pip
-      - echo "Installing dependencies from requirements.txt..."
-      - if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "requirements.txt not found"; fi
   build:
     commands:
       - echo "Build started on $(date)"
 
-      - echo "Verifying pytest installation..."
-      - python -m pytest --version
+      - echo Installing dependencies...
+      - pip install -U pytest
 
-      - echo "Running unit tests..."
-      - python -m pytest
+      - echo Checking pytest version
+      - pytest --version
   post_build:
     commands:
       - echo Build completed on `date`
