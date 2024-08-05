@@ -13,6 +13,14 @@ def get_db():
     conn = sqlite3.connect(DATABASE)
     return conn
 
+def get_scores():
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM scores")
+    scores = cursor.fetchall()
+    conn.close()
+    return scores
+
 def play_game():
     number_to_guess = random.randint(1, 100)
     attempts = 0
@@ -38,6 +46,10 @@ def play_game():
                 subprocess.run(["./scripts/again_app.sh"], shell=True)
             else:
                 print("Thats too bad! Bye now")
+                print("Here are your scores: ")
+                scores = get_scores()
+                for score in scores:
+                    print(f"Attempt ID: {score[0]}, Attempts: {score[1]}")
             break
 
 if __name__ == '__main__':
