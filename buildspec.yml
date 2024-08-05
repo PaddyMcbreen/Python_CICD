@@ -8,10 +8,6 @@ phases:
       - echo Installing dependencies...
       - pip install --upgrade pip
       - pip install -r requirements.txt
-
-  pre_build:
-    commands:
-      - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
