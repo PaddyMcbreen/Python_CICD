@@ -11,8 +11,8 @@ resource "aws_codestarconnections_connection" "codestar_connection" {
 # AWS CodePipeline - S3 Buckets
 #============================================================================#
 
-resource "aws_s3_bucket" "codepipelines_artifacts_bucket" {
-  bucket = "codepipeline-artifact-bucket"
+resource "aws_s3_bucket" "pipeline_arti_bucket" {
+  bucket = "pipeline-artifact-bucket"
 }
 
 #============================================================================#
@@ -24,7 +24,7 @@ resource "aws_codepipeline" "codepipeline" {
   role_arn = aws_iam_role.codepipeline_role.arn
 
   artifact_store {
-  location = aws_s3_bucket.codepipelines_artifacts_bucket.bucket
+  location = aws_s3_bucket.pipeline_arti_bucket.bucket
   type     = "S3"
   }
 
@@ -101,8 +101,8 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
           "s3:ListBucket"
         ]
         Resource = [
-          "${aws_s3_bucket.codepipelines_artifacts_bucket.arn}",
-          "${aws_s3_bucket.codepipelines_artifacts_bucket.arn}/*"
+          "${aws_s3_bucket.pipeline_arti_bucket.arn}",
+          "${aws_s3_bucket.pipeline_arti_bucket.arn}/*"
         ]
       },
       {
@@ -170,8 +170,8 @@ resource "aws_iam_role_policy" "codebuild_policy" {
           "s3:ListBucket"
         ]
         Resource = [
-          "${aws_s3_bucket.codepipelines_artifacts_bucket.arn}",
-          "${aws_s3_bucket.codepipelines_artifacts_bucket.arn}/*"
+          "${aws_s3_bucket.pipeline_arti_bucket.arn}",
+          "${aws_s3_bucket.pipeline_arti_bucket.arn}/*"
         ]
       },
       {
