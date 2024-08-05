@@ -7,14 +7,6 @@ phases:
   build:
     commands:
       - echo "Build started on $(date)"
-
-      - echo Installing dependencies...
-      - pip install -U pytest
-
-      - echo Checking pytest version
-      - pytest --version
-
-      # - pytest python_tests.py
   post_build:
     commands:
       - echo Build completed on `date`
