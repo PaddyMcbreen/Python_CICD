@@ -4,8 +4,8 @@
 source venv/bin/activate
 
 # Create the apps database
-python database.py
+python src/database.py
 
 # Run the Python application
-python app.py
+python src/app.py
 

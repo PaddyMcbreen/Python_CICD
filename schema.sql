@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS scores.db;
 
-CREATE TABLE scores.db (
+CREATE TABLE scores(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     attempts INTEGER NOT NULL
 );
