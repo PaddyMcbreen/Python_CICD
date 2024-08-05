@@ -43,5 +43,3 @@ def play_game():
 if __name__ == '__main__':
     init_db()
     play_game()
-    save_score()
-    get_db()
