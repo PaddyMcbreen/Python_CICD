@@ -4,17 +4,15 @@ phases:
   install:
     runtime-versions:
       python: latest
-  pre-build:
+  pre_build:
     commands:
-    - chmod +x ./src/python_tests.py
-
+      - chmod +x ./src/python_tests.py
   build:
     commands:
       - echo "Build started on $(date)"
 
       - echo Running Unit Tests ...
       - ./src/python_tests.py
-
   post_build:
     commands:
       - echo Build completed on `date`
