@@ -7,12 +7,18 @@ phases:
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
+      - pip install -r requirements.txt
+
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
+
+      - echo Checking pytest installation...
+      - pytest --version
+
       - echo Running unit tests ...
       - pytest
   post_build:
