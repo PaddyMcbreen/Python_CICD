@@ -86,6 +86,7 @@ resource "aws_codebuild_project" "codebuild_project" {
 
   source {
     type            = "CODEPIPELINE"
+    buildspec       = "buildspec.yml"
     }
 
   tags = {
