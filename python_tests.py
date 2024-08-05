@@ -1,8 +1,11 @@
-# There are currently no tests that have been created or are being used, this file is just a place keeper for if tests are to be implemented in the future.
+# Add required imports when creating further tests.
 
-# Import any tools you may need (e.g. pytest).
-# Create any tests for the code.
+# Unneccesarry fill in tests to show pytest working:
+class fillInTests():
 
-# Adjust the buildspec.yml file to use this file for testing with the pytest tool (already done)
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
 
-print("The buildspec file has successfully used pytest on the python_tests.py file. No tests are currently in use.")
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
