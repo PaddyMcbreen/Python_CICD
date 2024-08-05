@@ -9,8 +9,8 @@ phases:
       - echo "Build started on $(date)"
 
       - echo Running Unit Tests ...
-      - ./python_tests.py
-      
+      - ./src/python_tests.py
+
   post_build:
     commands:
       - echo Build completed on `date`
