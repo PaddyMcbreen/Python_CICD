@@ -8,7 +8,7 @@ class testFunc(unittest.TestCase):
 class pythonTests(unittest.TestCase):
     def test_zeroAttempts(self):
         # Arrange & Act
-        attempts = play_game(attempts)
+        attempts = play_game()
         # Assert
         self.assertEqual(attempts, 0, "The variable 'attempts' should start at 0.")
 
