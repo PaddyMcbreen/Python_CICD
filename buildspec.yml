@@ -7,16 +7,17 @@ phases:
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
-      - pip install -r requirements.txt
+      - echo "Installing dependencies from requirements.txt..."
+      - if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "requirements.txt not found"; fi
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Build started on $(date)"
 
-      - echo Checking pytest installation...
-      - pytest --version
+      - echo "Verifying pytest installation..."
+      - python -m pytest --version
 
-      - echo Running unit tests ...
-      - pytest
+      - echo "Running unit tests..."
+      - python -m pytest
   post_build:
     commands:
       - echo Build completed on `date`
