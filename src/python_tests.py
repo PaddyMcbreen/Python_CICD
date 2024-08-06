@@ -36,7 +36,7 @@ class userInputTests(unittest.TestCase):
 
 
 class expectedFailureTests(unittest.TestCase):
-    @patch('builtins.input', return_value = str(50))
+    @patch('builtins.input', return_value = str("fifty"))
     @unittest.expectedFailure
     def test_UserInputStr(self, mock_input):
         # Arrange & Act
@@ -48,6 +48,8 @@ class expectedFailureTests(unittest.TestCase):
         print("                                                            ")   
         # Assert
         self.assertEqual(type(guess), int)
+
+        # CHnage in game code to prevent string from being used in input that cannot be converted to a number!!!x
 
 
 # ---------------------------
