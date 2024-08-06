@@ -30,14 +30,15 @@ def play_game():
 
     while True:
         guess = int(input("Enter your guess: "))
+        print("You have chosen ", guess)
         attempts += 1
 
         if guess < number_to_guess:
-            print("Too low! Try again.")
+            print(guess, " is too low! Try again.")
         elif guess > number_to_guess:
-            print("Too high! Try again.")
+            print(guess, " too high! Try again.")
         else:
-            print(f"Congratulations! You've guessed the number in {attempts} attempts.")
+            print(f"Congratulations! The number was", number_to_guess, "You've guessed the number in {attempts} attempts.")
             save_score(attempts)
             
             again = str(input("Would you like to play again?: (y/n) ")).strip().lower()
