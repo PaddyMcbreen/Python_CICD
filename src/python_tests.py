@@ -7,7 +7,8 @@ class testFunc(unittest.TestCase):
         pass
 
 class pythonTests(unittest.TestCase):
-    def test_typeOfGuess(self):
+    @patch('app.input', return_value='50')  # Mock input to return '50'
+    def test_typeOfGuess(self, mock_input):
         # Arrange & Act
         guess = play_game()
         # Assert
