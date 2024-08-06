@@ -8,10 +8,10 @@ class testFunc(unittest.TestCase):
         pass
 
 class pythonTests(unittest.TestCase):
-    @patch('builtins.input', return_value=42)
+    @patch('builtins.input', return_value = 50)
     def test_typeOfGuess(self, mock_input):
         # Arrange & Act
-        guess = play_game()
+        guess = play_game()        
         # Assert
         self.assertIsInstance(guess, int, "Guess Variable is not a number")
 

@@ -53,6 +53,8 @@ def play_game():
                     print(f"Player ID: {score[0]}, Attempts: {score[1]}")
             break
 
+        return guess
+
 if __name__ == '__main__':
     init_db()
     play_game()
