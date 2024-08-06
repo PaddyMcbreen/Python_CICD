@@ -10,7 +10,7 @@ class pythonTests(unittest.TestCase):
         # Arrange & Act
         guess = play_game()
         # Assert
-        self.assertEqual(guess, int)
+        self.assertIsInstance(guess, int)
 
 
 
