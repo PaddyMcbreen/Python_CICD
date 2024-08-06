@@ -12,7 +12,7 @@ class pythonTests(unittest.TestCase):
         # Arrange & Act
         guess = play_game()        
         # Assert
-        self.assertEqual(guess, type(int))
+        self.assertEqual(type(guess), int)
 
 
 
