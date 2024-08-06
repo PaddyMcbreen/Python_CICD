@@ -12,7 +12,7 @@ class pythonTests(unittest.TestCase):
         # Arrange & Act
         guess = play_game()        
         # Assert
-        self.assertIsInstance(guess, int, "Guess Variable is not a number")
+        self.assertIsInstance(guess, type(int), "Guess Variable is not a number")
 
 
 
