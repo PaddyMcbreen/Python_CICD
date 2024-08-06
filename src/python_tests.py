@@ -26,7 +26,7 @@ class userInputTests(unittest.TestCase):
 class expectedFailureTests(unittest.TestCase):
     @patch('builtins.input', return_value = int("fifty"))
     @unittest.expectedFailure
-    def test_guessIsNum3(self, mock_input):
+    def test_UserInputStr(self, mock_input):
         # Arrange & Act
         guess = play_game()        
         # Assert
