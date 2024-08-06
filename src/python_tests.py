@@ -7,7 +7,7 @@ class testFunc(unittest.TestCase):
         pass
 
 class pythonTests(unittest.TestCase):
-    @patch('builtins.input', return_value = int(50))
+    @patch('builtins.input', return_value = int("50"))
     def test_typeOfGuess(self, mock_input):
         # Arrange & Act
         guess = play_game()        
