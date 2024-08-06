@@ -6,11 +6,11 @@ class testFunc(unittest.TestCase):
         pass
 
 class pythonTests(unittest.TestCase):
-    def test_zeroAttempts(self):
+    def test_typeOfGuess(self):
         # Arrange & Act
-        attempts = play_game()
+        guess = play_game()
         # Assert
-        self.assertEqual(attempts, 0)
+        self.assertEqual(guess, int)
 
 
 
