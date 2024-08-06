@@ -8,7 +8,7 @@ class testFunc(unittest.TestCase):
 class pythonTests(unittest.TestCase):
     def test_typeOfGuess(self):
         # Arrange & Act
-        guess = play_game(5)
+        guess = play_game()
         if type(guess) is int:
             pass
         else:
