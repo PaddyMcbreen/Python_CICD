@@ -1,5 +1,6 @@
 import unittest
 from app import play_game
+from unittest.mock import patch
 
 class testFunc(unittest.TestCase):
     def test_func_1(self):
