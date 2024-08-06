@@ -36,8 +36,8 @@ class userInputTests(unittest.TestCase):
 
 
 class expectedFailureTests(unittest.TestCase):
-    @patch('builtins.input', return_value = int(50))
-    # @unittest.expectedFailure
+    @patch('builtins.input', return_value = str(50))
+    @unittest.expectedFailure
     def test_UserInputStr(self, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
@@ -47,7 +47,7 @@ class expectedFailureTests(unittest.TestCase):
         print("Test Complete - Passed")   
         print("                                                            ")   
         # Assert
-        self.assertEqual(type(guess), str)
+        self.assertEqual(type(guess), int)
 
 
 # ---------------------------
