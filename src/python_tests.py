@@ -9,9 +9,13 @@ class testFunc(unittest.TestCase):
 class pythonTests(unittest.TestCase):
     def test_typeOfGuess(self):
         # Arrange & Act
-        guess = play_game()
+        guess = play_game(5)
+        if type(guess) is int:
+            pass
+        else:
+            self.fail("Guess variable is not a number")
         # Assert
-        self.assertIsInstance(guess, int)
+        # self.assertIsInstance(guess, int)
 
 
 
