@@ -16,9 +16,11 @@ class userInputTests(unittest.TestCase):
         print("                                                            ")
         print("Checks that the user input will work with a random integer")
         guess = play_game()
-        print("Test Complete - Passed")        
+        print("Test Complete - Passed")   
+        print("                                                            ")     
         # Assert
         self.assertEqual(type(guess), int)
+
 
     @patch('builtins.input', return_value = int("50"))
     def test_guessIsNum2(self, mock_input):
@@ -27,7 +29,8 @@ class userInputTests(unittest.TestCase):
         print("                                                            ")
         print("Checks that the user input with convert a numbered string to an integer")
         guess = play_game() 
-        print("Test Complete - Passed")       
+        print("Test Complete - Passed")    
+        print("                                                            ")   
         # Assert
         self.assertEqual(type(guess), int)
 
@@ -41,7 +44,8 @@ class expectedFailureTests(unittest.TestCase):
         print("                                                            ")
         print("Checks that the user input will not allow strings that cannot convert to a number")
         guess = play_game()  
-        print("Test Complete - Passed")      
+        print("Test Complete - Passed")   
+        print("                                                            ")   
         # Assert
         self.assertEqual(type(guess), str)
 
