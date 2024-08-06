@@ -8,7 +8,14 @@ class testFunc(unittest.TestCase):
 
 class pythonTests(unittest.TestCase):
     @patch('builtins.input', return_value = int(50))
-    def test_typeOfGuess(self, mock_input):
+    def test_guessIsNum(self, mock_input):
+        # Arrange & Act
+        guess = play_game()        
+        # Assert
+        self.assertEqual(type(guess), int)
+
+    @patch('builtins.input', return_value = int("50"))
+    def test_guessIsNum2(self, mock_input):
         # Arrange & Act
         guess = play_game()        
         # Assert
