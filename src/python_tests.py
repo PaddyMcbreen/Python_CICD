@@ -8,7 +8,9 @@ class testFunc(unittest.TestCase):
         pass
 
 
-class userInputTests(unittest.TestCase):
+class pythonAppTests(unittest.TestCase):
+
+    # Tests the user input when taking a guess:
     @patch('builtins.input', return_value = int(50))
     def test_guessIsNum(self, mock_input):
         # Arrange & Act
@@ -22,6 +24,12 @@ class userInputTests(unittest.TestCase):
         self.assertEqual(type(guess), int)
 
 
+class pythonDatabaseTests(unittest.TestCase):
+
+    #Tests the functionaility of the database:
+    def test_firstDatabaseTest(self):
+        print("Fill Test In")
+        pass
 
 
 #---------------------------
