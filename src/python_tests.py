@@ -12,7 +12,8 @@ class pythonAppTests(unittest.TestCase):
 
     # Tests the user input when taking a guess:
     @patch('builtins.input', return_value = int(50))
-    def test_guessIsNum(self, mock_input):
+    @patch('random.randint', return_value=50)
+    def test_correctGuess (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
@@ -21,6 +22,8 @@ class pythonAppTests(unittest.TestCase):
         print("Test Complete - Passed")   
         print("                                                            ")     
         # Assert
+        mock_input.assert_called()
+        mock_randint.assert_called_with(1, 100)
         self.assertEqual(type(guess), int)
 
 
@@ -35,4 +38,3 @@ class pythonDatabaseTests(unittest.TestCase):
 #---------------------------
 if __name__ == "__main__":
     unittest.main()
-    
