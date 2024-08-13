@@ -2,12 +2,6 @@ import unittest
 from unittest.mock import patch
 from app import play_game
 
-class testFunc(unittest.TestCase):
-    def test_func_1(self):
-        "This is a test function which provides no use"
-        pass
-
-
 class pythonAppTests(unittest.TestCase):
 
     # Tests the user input when taking a guess:
@@ -58,15 +52,6 @@ class pythonAppTests(unittest.TestCase):
 
         mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
-
-
-class pythonDatabaseTests(unittest.TestCase):
-
-    #Tests the functionaility of the database:
-    def test_firstDatabaseTest(self):
-        print("Fill Test In")
-        pass
-
 
 #---------------------------
 if __name__ == "__main__":
