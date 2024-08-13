@@ -17,7 +17,7 @@ class pythonAppTests(unittest.TestCase):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
-        print("Checks that the user input will work with a random integer")
+        print("Checks that the game passes when the num is correctly guessed")
         guess = play_game()
         print("Test Complete - Passed")   
         print("                                                            ")     
@@ -25,6 +25,21 @@ class pythonAppTests(unittest.TestCase):
         mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
        # self.assertEqual(type(guess), int)
+
+    # Tests the user input when taking a guess:
+    @patch('builtins.input', return_value = int(35, 40))
+    @patch('random.randint', return_value=40)
+    def test_incorrectGuess (self, mock_randint, mock_input):
+        # Arrange & Act
+        print("------------------------------------------------------------")
+        print("                                                            ")
+        print("Checks that the game respondes correcly to an incorrect guess")
+        guess = play_game()
+        print("Test Complete - Passed")   
+        print("                                                            ")     
+        # Assert
+        mock_input.assert_called()
+        mock_randint.assert_called_with(1, 100)
 
 
 class pythonDatabaseTests(unittest.TestCase):
