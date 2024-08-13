@@ -54,6 +54,9 @@ class pythonAppTests(unittest.TestCase):
         # Assert
         mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
+        
+        mock_input.assert_called()
+        mock_randint.assert_called_with(1, 100)
 
 
 class pythonDatabaseTests(unittest.TestCase):
