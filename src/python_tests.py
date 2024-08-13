@@ -61,13 +61,13 @@ class pythonReplayTests(unittest.TestCase):
 class pythonDbTests(unittest.TestCase):
 
     # Tests that the apps database works correctly:
-     @patch('builtins.input', side_effect=[23, 86, "n"])
-     @patch('random.randint', side_effect=[86])
+     @patch('builtins.input', side_effect=[92, "n"])
+     @patch('random.randint', side_effect=[92])
      def test_incorrectGuess (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
-        print("Checks that the game is able to be replayed")
+        print("Checks that the game scores can be retrieved")
         guess = play_game()
         getScores = get_scores()
         print("Test Complete - Passed")   
