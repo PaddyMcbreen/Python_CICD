@@ -30,7 +30,7 @@ class pythonAppTests(unittest.TestCase):
     # @patch('builtins.input', return_value = int(35))
     @patch('builtins.input', side_effect=[35, 40])
     @patch('random.randint', return_value=40)
-    def test_incorrectGuess (self, mock_randint, mock_input, mock_input_2):
+    def test_incorrectGuess (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
