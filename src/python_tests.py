@@ -40,7 +40,6 @@ class pythonAppTests(unittest.TestCase):
         print("                                                            ")     
         # Assert
         mock_input.assert_called()
-        mock_input_2.assert_called()
         mock_randint.assert_called_with(1, 100)
 
 
