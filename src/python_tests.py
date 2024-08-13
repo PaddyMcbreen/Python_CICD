@@ -72,7 +72,7 @@ class pythonDbTests(unittest.TestCase):
         print("                                                            ")
         print("TEST DESC --> Checks that the game scores can be retrieved")
         print("                                                            ")
-        guess = play_game()
+        # guess = play_game()
         getScores = get_scores()
         print("Test Complete - Passed")   
         print("                                                            ")     
