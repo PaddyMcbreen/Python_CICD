@@ -12,7 +12,7 @@ class pythonInputTests(unittest.TestCase):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
-        print("Checks that the game passes when the num is correctly guessed")
+        print("TEST DESC --> Checks that the game passes when the num is correctly guessed")
         print("                                                            ")
         guess = play_game()
         print("Test Complete - Passed")   
@@ -28,7 +28,7 @@ class pythonInputTests(unittest.TestCase):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
-        print("Checks that the game respondes correcly to an incorrect guess")
+        print("TEST DESC --> Checks that the game respondes correcly to an incorrect guess")
         print("                                                            ")
         guess = play_game()
         print("Test Complete - Passed")   
@@ -47,7 +47,7 @@ class pythonReplayTests(unittest.TestCase):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
-        print("Checks that the game is able to be replayed")
+        print("TEST DESC --> Checks that the game is able to be replayed")
         print("                                                            ")
         guess = play_game()
         guess_2 = play_game()
@@ -70,7 +70,7 @@ class pythonDbTests(unittest.TestCase):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
-        print("Checks that the game scores can be retrieved")
+        print("TEST DESC --> Checks that the game scores can be retrieved")
         print("                                                            ")
         guess = play_game()
         getScores = get_scores()
