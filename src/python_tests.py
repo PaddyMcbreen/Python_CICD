@@ -5,19 +5,19 @@ from app import play_game
 class pythonAppTests(unittest.TestCase):
 
     # Tests the user input when taking a guess:
-    # @patch('builtins.input', return_value = int(50))
-    # @patch('random.randint', return_value=50)
-    # def test_correctGuess (self, mock_randint, mock_input):
-    #     # Arrange & Act
-    #     print("------------------------------------------------------------")
-    #     print("                                                            ")
-    #     print("Checks that the game passes when the num is correctly guessed")
-    #     guess = play_game()
-    #     print("Test Complete - Passed")   
-    #     print("                                                            ")     
-    #     # Assert
-    #     mock_input.assert_called()
-    #     mock_randint.assert_called_with(1, 100)
+    @patch('builtins.input', return_value = int(50))
+    @patch('random.randint', return_value=50)
+    def test_correctGuess (self, mock_randint, mock_input):
+        # Arrange & Act
+        print("------------------------------------------------------------")
+        print("                                                            ")
+        print("Checks that the game passes when the num is correctly guessed")
+        guess = play_game()
+        print("Test Complete - Passed")   
+        print("                                                            ")     
+        # Assert
+        mock_input.assert_called()
+        mock_randint.assert_called_with(1, 100)
 
 
     # Tests the user input when taking a guess:
