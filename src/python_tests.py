@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import patch
-from app import play_game
+from app import play_game, get_scores
+
 
 class pythonInputTests(unittest.TestCase):
 
@@ -56,7 +57,24 @@ class pythonReplayTests(unittest.TestCase):
         mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
 
-    
+
+class pythonDbTests(unittest.TestCase):
+
+    # Tests that the apps database works correctly:
+     @patch('builtins.input', side_effect=[23, 86, "n"])
+     @patch('random.randint', side_effect=[86])
+     def test_incorrectGuess (self, mock_randint, mock_input):
+        # Arrange & Act
+        print("------------------------------------------------------------")
+        print("                                                            ")
+        print("Checks that the game is able to be replayed")
+        guess = play_game()
+        getScores = get_scores()
+        print("Test Complete - Passed")   
+        print("                                                            ")     
+        # Assert
+        mock_input.assert_called()
+        mock_randint.assert_called_with(1, 100)
 
 #---------------------------
 if __name__ == "__main__":
