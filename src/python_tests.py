@@ -49,12 +49,13 @@ class pythonAppTests(unittest.TestCase):
         print("                                                            ")
         print("Checks that the game is able to be replayed")
         guess = play_game()
+        guess_2 = play_game()
         print("Test Complete - Passed")   
         print("                                                            ")     
         # Assert
         mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
-        
+
         mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
 
