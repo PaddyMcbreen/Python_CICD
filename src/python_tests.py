@@ -27,7 +27,7 @@ class pythonAppTests(unittest.TestCase):
        # self.assertEqual(type(guess), int)
 
     # Tests the user input when taking a guess:
-    @patch('builtins.input', return_value = int(35), return_value = int(40))
+    @patch('builtins.input', return_value = int(35), return_value_2 = int(40))
     @patch('random.randint', return_value=40)
     def test_incorrectGuess (self, mock_randint, mock_input):
         # Arrange & Act
