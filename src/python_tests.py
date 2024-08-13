@@ -28,7 +28,7 @@ class pythonAppTests(unittest.TestCase):
 
     # Tests the user input when taking a guess:
     # @patch('builtins.input', return_value = int(35))
-    @patch('builtins.input', side_effect=[35, 40])
+    @patch('builtins.input', side_effect=[35, 40, "n"])
     @patch('random.randint', return_value=40)
     def test_incorrectGuess (self, mock_randint, mock_input):
         # Arrange & Act
