@@ -41,7 +41,7 @@ class pythonAppTests(unittest.TestCase):
         mock_randint.assert_called_with(1, 100)
 
     # Tests that the game can be replayed:
-    @patch('builtins.input', side_effect=[23, 86, "y", 45])
+    @patch('builtins.input', side_effect=[23, 86, "y", 45, "n"])
     @patch('random.randint', side_effect=[86, 45])
     def test_incorrectGuess (self, mock_randint, mock_input):
         # Arrange & Act
