@@ -22,8 +22,8 @@ class pythonInputTests(unittest.TestCase):
         mock_randint.assert_called_with(1, 100)
     
     # Tests the user input when taking a guess (incorrect):
-    @patch('builtins.input', side_effect=[35, 40, "n"])
-    @patch('random.randint', return_value=40)
+    @patch('builtins.input', side_effect=[35, 59, "n"])
+    @patch('random.randint', return_value=59)
     def test_incorrectGuess (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
