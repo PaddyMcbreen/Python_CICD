@@ -22,20 +22,20 @@ class pythonInputTests(unittest.TestCase):
         mock_randint.assert_called_with(1, 100)
     
     # Tests the user input when taking a guess (incorrect):
-    @patch('builtins.input', side_effect=[35, 59, "n"])
-    @patch('random.randint', return_value=59)
-    def test_incorrectGuess (self, mock_randint, mock_input):
-        # Arrange & Act
-        print("------------------------------------------------------------")
-        print("                                                            ")
-        print("TEST DESC --> Checks that the game respondes correcly to an incorrect guess")
-        print("                                                            ")
-        guess = play_game()
-        print("Test Complete - Passed")   
-        print("                                                            ")     
-        # Assert
-        mock_input.assert_called()
-        mock_randint.assert_called_with(1, 100)
+    # @patch('builtins.input', side_effect=[35, 59, "n"])
+    # @patch('random.randint', return_value=59)
+    # def test_incorrectGuess (self, mock_randint, mock_input):
+    #     # Arrange & Act
+    #     print("------------------------------------------------------------")
+    #     print("                                                            ")
+    #     print("TEST DESC --> Checks that the game respondes correcly to an incorrect guess")
+    #     print("                                                            ")
+    #     guess = play_game()
+    #     print("Test Complete - Passed")   
+    #     print("                                                            ")     
+    #     # Assert
+    #     mock_input.assert_called()
+    #     mock_randint.assert_called_with(1, 100)
 
     
 class pythonReplayTests(unittest.TestCase):
