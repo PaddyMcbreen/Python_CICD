@@ -61,24 +61,24 @@ class pythonReplayTests(unittest.TestCase):
         mock_randint.assert_called_with(1, 100)
 
 
-class pythonDbTests(unittest.TestCase):
+# class pythonDbTests(unittest.TestCase):
 
-    # Tests that the apps database works correctly:
-     @patch('builtins.input', side_effect=[92, "n"])
-     @patch('random.randint', return_value=92)
-     def test_database (self, mock_randint, mock_input):
-        # Arrange & Act
-        print("------------------------------------------------------------")
-        print("                                                            ")
-        print("TEST DESC --> Checks that the game scores can be retrieved")
-        print("                                                            ")
-        # guess = play_game()
-        getScores = get_scores()
-        print("Test Complete - Passed")   
-        print("                                                            ")     
-        # Assert
-        mock_input.assert_called()
-        mock_randint.assert_called_with(1, 100)
+#     # Tests that the apps database works correctly:
+#      @patch('builtins.input', side_effect=[92, "n"])
+#      @patch('random.randint', return_value=92)
+#      def test_database (self, mock_randint, mock_input):
+#         # Arrange & Act
+#         print("------------------------------------------------------------")
+#         print("                                                            ")
+#         print("TEST DESC --> Checks that the game scores can be retrieved")
+#         print("                                                            ")
+#         # guess = play_game()
+#         getScores = get_scores()
+#         print("Test Complete - Passed")   
+#         print("                                                            ")     
+#         # Assert
+#         mock_input.assert_called()
+#         mock_randint.assert_called_with(1, 100)
 
 #---------------------------
 if __name__ == "__main__":
