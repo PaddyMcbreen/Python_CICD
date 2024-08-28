@@ -22,20 +22,20 @@ class pythonInputTests(unittest.TestCase):
         mock_randint.assert_called_with(1, 100)
     
     # Tests the user input when taking a guess (incorrect):
-    # @patch('builtins.input', side_effect=[35, 59, "n"])
-    # @patch('random.randint', return_value=59)
-    # def test_incorrectGuess (self, mock_randint, mock_input):
-    #     # Arrange & Act
-    #     print("------------------------------------------------------------")
-    #     print("                                                            ")
-    #     print("TEST DESC --> Checks that the game respondes correcly to an incorrect guess")
-    #     print("                                                            ")
-    #     guess = play_game()
-    #     print("Test Complete - Passed")   
-    #     print("                                                            ")     
-    #     # Assert
-    #     mock_input.assert_called()
-    #     mock_randint.assert_called_with(1, 100)
+    @patch('builtins.input', side_effect=[35, 59, "n"])
+    @patch('random.randint', return_value=59)
+    def test_incorrectGuess (self, mock_randint, mock_input):
+        # Arrange & Act
+        print("------------------------------------------------------------")
+        print("                                                            ")
+        print("TEST DESC --> Checks that the game respondes correcly to an incorrect guess")
+        print("                                                            ")
+        guess = play_game()
+        print("Test Complete - Passed")   
+        print("                                                            ")     
+        # Assert
+        mock_input.assert_called()
+        mock_randint.assert_called_with(1, 100)
 
     
 class pythonReplayTests(unittest.TestCase):
@@ -43,7 +43,7 @@ class pythonReplayTests(unittest.TestCase):
     # Tests that the game can be replayed:
      @patch('builtins.input', side_effect=[23, 86, "y", 45, "n"])
      @patch('random.randint', side_effect=[86, 45])
-     def test_incorrectGuess (self, mock_randint, mock_input):
+     def test_replayability (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
@@ -66,7 +66,7 @@ class pythonDbTests(unittest.TestCase):
     # Tests that the apps database works correctly:
      @patch('builtins.input', side_effect=[92, "n"])
      @patch('random.randint', side_effect=[92])
-     def test_incorrectGuess (self, mock_randint, mock_input):
+     def test_database (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
