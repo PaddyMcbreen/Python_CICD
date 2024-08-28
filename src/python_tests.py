@@ -66,7 +66,7 @@ class pythonDbTests(unittest.TestCase):
     # Tests that the apps database works correctly:
      @patch('builtins.input', side_effect=[92, "n"])
      @patch('random.randint', side_effect=[92])
-     def test_database (self, mock_randint, mock_input):
+     def test_database (self, mock_randint):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
