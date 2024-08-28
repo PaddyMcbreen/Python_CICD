@@ -64,9 +64,9 @@ class pythonReplayTests(unittest.TestCase):
 class pythonDbTests(unittest.TestCase):
 
     # Tests that the apps database works correctly:
-     @patch('builtins.input', side_effect=[92, "n"])
+     @patch('builtins.input', side_effect=[82, 92, "n"])
      @patch('random.randint', side_effect=[92])
-     def test_database (self, mock_randint):
+     def test_database (self, mock_randint, mock_input):
         # Arrange & Act
         print("------------------------------------------------------------")
         print("                                                            ")
@@ -77,7 +77,7 @@ class pythonDbTests(unittest.TestCase):
         print("Test Complete - Passed")   
         print("                                                            ")     
         # Assert
-        # mock_input.assert_called()
+        mock_input.assert_called()
         mock_randint.assert_called_with(1, 100)
 
 #---------------------------
