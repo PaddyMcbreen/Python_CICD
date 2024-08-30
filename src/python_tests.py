@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from app import play_game, get_scores
+from app import play_game, get_scores, get_db
 
 
 class pythonInputTests(unittest.TestCase):
@@ -72,8 +72,9 @@ class pythonDbTests(unittest.TestCase):
         print("                                                            ")
         print("TEST DESC --> Checks that the game scores can be retrieved")
         print("                                                            ")
-        guess = play_game()
+        guess     = play_game()
         getScores = get_scores()
+        getDb     = get_db()
         print("Test Complete - Passed")   
         print("                                                            ")     
         # Assert
